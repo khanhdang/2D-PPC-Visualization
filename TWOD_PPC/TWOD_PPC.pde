@@ -8,8 +8,8 @@ boolean set_input = false;
 TSV[][] TSV_grid;
 
 // Number of columns and rows in the grid
-int cols = 8;
-int rows = 8;
+int cols = 16;
+int rows = 16;
 int tile_dim = 200;
 float Text_size = tile_dim/10;
 float shape_ratio = 0.7;
@@ -17,7 +17,7 @@ float shape_ratio = 0.7;
 PFont f;  
 
 // Random
-float injectionRate = 20;
+float injectionRate = 1;
 int defect_num;
 
 
@@ -31,8 +31,8 @@ import java.io.FileWriter;
 FileWriter tracefile = null;
 //PrintWriter  tracefile;
 void setup() {
-  size(1400,1000);
-  //fullScreen();
+  //size(1400,1000);
+  fullScreen();
   if (set_input) {
     try { 
       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -46,12 +46,12 @@ void setup() {
     if (S_rows != null) rows=Integer.parseInt(S_rows);
     //String S_redudant = JOptionPane.showInputDialog(frame, "Redundancy", "false");
     //if (S_redudant != null) redundantTSV=Boolean.parseBoolean(S_redudant);
-    tile_dim = min (width/(cols+1), height/(rows+1));
+    tile_dim = min (width/(cols+1), (height-200)/(rows+1));
     Text_size = tile_dim/5;
   } else {  
     //cols = width/tile_dim-1;
     //rows = height/tile_dim-1;
-    tile_dim = min (width/(cols+1), height/(rows+1));
+    tile_dim = min (width/(cols+1), (height-200)/(rows+1));
     Text_size = tile_dim/5;
     //tile_dim = min( floor(width/cols), floor(height/rows));
   }

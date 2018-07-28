@@ -16,7 +16,7 @@ class TSV{
     h = tempH;
     x_idx = tempX_idx;
     y_idx = tempY_idx;
-    label = "b("+str(y_idx)+","+str(x_idx)+")";
+    label = str(y_idx)+","+str(x_idx);
   }
   void DrawATSV() {
     stroke(0);
@@ -34,16 +34,16 @@ class TSV{
     textFont(f, Text_size);
   }
   void DrawLink() {
-    stroke(0,100,255,200);
+    stroke(0,100,255,160);
     fill(0,100,255,100);
-    strokeWeight(10);
+    strokeWeight(8);
     
     if (link_x != -1) {
-      arrowLine(x, y, link_x, y, 0, radians(30), true);
+      arrowLine(x+.2*tile_dim, y, link_x, y, 0, radians(30), true);
     }
     stroke(0,200,55,200);
     if (link_y != -1) {
-      arrowLine(x, y, x, link_y, 0, radians(30), true);
+      arrowLine(x, y+.2*tile_dim, x, link_y, 0, radians(30), true);
     }
     //reset stroke
     stroke(0);

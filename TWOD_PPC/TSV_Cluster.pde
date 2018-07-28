@@ -16,8 +16,8 @@ void TSV_Cluster_Gen() {
        } else {
          TSV_grid[i][j].Status = "healthy";
        }
-       TSV_grid[i][j].link_x = (i+1.3)*tile_dim;
-       TSV_grid[i][j].link_y = (j+1.3)*tile_dim;
+       TSV_grid[i][j].link_x = (i+1.25)*tile_dim;
+       TSV_grid[i][j].link_y = (j+1.25)*tile_dim;
     }
   }
 }
